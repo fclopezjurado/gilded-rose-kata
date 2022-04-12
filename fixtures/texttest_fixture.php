@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use GildedRose\GildedRose;
 use GildedRose\Item;
 
-echo 'OMGHAI!' . PHP_EOL;
+echo 'OMGHAI!'.PHP_EOL;
 
 $items = [
     new Item('+5 Dexterity Vest', 10, 20),
@@ -29,11 +29,11 @@ if (count($argv) > 1) {
     $days = (int) $argv[1];
 }
 
-for ($i = 0; $i < $days; $i++) {
-    echo "-------- day ${i} --------" . PHP_EOL;
-    echo 'name, sellIn, quality' . PHP_EOL;
+for ($i = 0; $i < $days; ++$i) {
+    echo "-------- day ${i} --------".PHP_EOL;
+    echo 'name, sellIn, quality'.PHP_EOL;
     foreach ($items as $item) {
-        echo $item . PHP_EOL;
+        echo $item.PHP_EOL;
     }
     echo PHP_EOL;
     $app->updateQuality();
