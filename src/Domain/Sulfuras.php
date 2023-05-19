@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Model;
+namespace App\Domain;
 
 final class Sulfuras extends Item
 {
     private const NAME = 'Sulfuras, Hand of Ragnaros';
 
-    public function __construct(public int $sellIn, public int $quality)
+    public function __construct(SellIn $sellIn, Quality $quality)
     {
-        parent::__construct(name: self::NAME, sellIn: $sellIn, quality: $quality);
+        parent::__construct(new Name(self::NAME), $sellIn, $quality);
     }
 
     public function update(): void

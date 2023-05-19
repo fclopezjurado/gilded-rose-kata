@@ -1,29 +1,20 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Application;
 
-use App\Domain\Model\Item;
+use App\Domain\Item;
 
-final class GildedRose
+final readonly class GildedRose
 {
     /**
-     * @param Item[] $items
+     * @param array<Item> $items
      */
-    public function __construct(private array $items)
-    {
+    public function __construct(
+        private readonly array $items
+    ) {
     }
 
-    /**
-     * @return Item[]
-     */
-    public function getItems(): array
-    {
-        return $this->items;
-    }
-
-    public function update(): void
+    public function updateQuality(): void
     {
         foreach ($this->items as $item) {
             $item->update();
