@@ -10,14 +10,10 @@ final class AgedBrie extends Item
      * @var int
      */
     private const DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD = 0;
-    /**
-     * @var string
-     */
-    private const NAME = 'Aged Brie';
 
-    public function __construct(SellIn $sellIn, Quality $quality)
+    public function __construct(Name $name, SellIn $sellIn, Quality $quality)
     {
-        parent::__construct(new Name(self::NAME), $sellIn, $quality);
+        parent::__construct($name, $sellIn, $quality);
     }
 
     public function update(): void

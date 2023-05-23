@@ -55,7 +55,7 @@ abstract class Item implements \Stringable
 
     public function __toString(): string
     {
-        return "{$this->name}, {$this->sellIn}, {$this->quality}";
+        return "{$this->name->name()}, {$this->sellIn->value()}, {$this->quality->value()}";
     }
 
     abstract public function update(): void;

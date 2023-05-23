@@ -18,20 +18,16 @@ final class BackstagePasses extends Item
      * @var int
      */
     private const RESET_QUALITY_SELL_IN_THRESHOLD = 0;
-    /**
-     * @var string
-     */
-    private const NAME = 'Backstage passes to a TAFKAL80ETC concert';
 
-    public function __construct(SellIn $sellIn, Quality $quality)
+    public function __construct(Name $name, SellIn $sellIn, Quality $quality)
     {
-        parent::__construct(new Name(self::NAME), $sellIn, $quality);
+        parent::__construct($name, $sellIn, $quality);
     }
 
     public function update(): void
     {
         $this->decreaseSellIn();
-        $this->decreaseQuality();
+        $this->increaseQuality();
 
         if ($this->hasToBeSoldInLessThan(self::DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD)) {
             $this->increaseQuality();
