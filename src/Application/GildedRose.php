@@ -4,23 +4,16 @@ declare(strict_types=1);
 
 namespace App\Application;
 
-use App\Domain\Model\Item;
+use App\Domain\Item;
 
-final class GildedRose
+final readonly class GildedRose
 {
     /**
      * @param Item[] $items
      */
-    public function __construct(private array $items)
-    {
-    }
-
-    /**
-     * @return Item[]
-     */
-    public function getItems(): array
-    {
-        return $this->items;
+    public function __construct(
+        private readonly array $items
+    ) {
     }
 
     public function update(): void
@@ -28,5 +21,13 @@ final class GildedRose
         foreach ($this->items as $item) {
             $item->update();
         }
+    }
+
+    /**
+     * @return Item[]
+     */
+    public function items(): array
+    {
+        return $this->items;
     }
 }
