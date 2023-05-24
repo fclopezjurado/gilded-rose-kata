@@ -23,7 +23,7 @@ dependencies: ## Installs application dependencies
 	@$(docker_composer_run) sh -c "composer install"
 
 unit-test: ## Runs unit tests
-	@$(docker_composer_run) sh -c "vendor/bin/phpunit tests"
+	@$(docker_composer_run) sh -c "vendor/bin/phpunit tests --test-suffix .php"
 
 static-analysis: ## Checks static code analysis rules
 	@$(docker_composer_run) sh -c "vendor/bin/phpstan analyse -l 8 src tests"
@@ -37,6 +37,6 @@ coding-standards-apply: ## Applies coding standards rules fixes
 code-quality: coding-standards static-analysis
 
 security-check: ## Checks security vulnerabilities on the dependencies
-	@$(docker_composer_run) sh -c "vendor/backend-shared/code-quality/src/security-checker"
+	@$(docker_composer_run) sh -c "bin/security-checker"
 
 .DEFAULT_GOAL := help
