@@ -15,6 +15,7 @@ class QualityShould extends TestCase
 {
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
@@ -41,6 +42,7 @@ class QualityShould extends TestCase
 
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
@@ -55,6 +57,7 @@ class QualityShould extends TestCase
 
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
@@ -70,6 +73,7 @@ class QualityShould extends TestCase
 
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
@@ -85,6 +89,7 @@ class QualityShould extends TestCase
 
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
@@ -100,6 +105,7 @@ class QualityShould extends TestCase
 
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
@@ -115,6 +121,7 @@ class QualityShould extends TestCase
 
     /**
      * @param array{value: int} $data
+     *
      * @throws QualityOutOfRangeException
      */
     #[Test]
